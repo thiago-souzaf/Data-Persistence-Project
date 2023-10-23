@@ -9,6 +9,12 @@ using UnityEngine.UI;
 public class MenuUIHandler : MonoBehaviour
 {
     public TMP_InputField inputName;
+    public TextMeshProUGUI bestScoreText;
+
+    private void Start()
+    {
+        bestScoreText.text = $"Best Score: {DataManager.Instance.bestSocoreName} : {DataManager.Instance.bestScore}";
+    }
     public void StartGame()
     {
         DataManager.Instance.SetUserName(inputName.text);
